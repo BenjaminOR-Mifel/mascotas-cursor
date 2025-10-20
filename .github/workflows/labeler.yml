@@ -1,0 +1,9 @@
+name: Multi Labeler
+on:
+  pull_request:
+    types: [ opened, edited, synchronize, ready_for_review ]
+    branches: [ main, develop ]
+
+jobs:
+  call-labeler:
+    uses: modyo-connect/workflows/.github/workflows/labeler.yml@v1

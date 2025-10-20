@@ -1,0 +1,21 @@
+========================================================================================
+==== Los nombres de los services que se encuentran en el archivo docker-compose.yml ====
+========================================================================================
+
+# Comando para ver los contenedores que estan activos
+docker ps
+
+# Comando para levantar contenedores
+docker compose up -d
+
+# Comando para detener contenedores
+docker compose down
+
+# Comando para entrar a la consola del contenedor de la app
+docker compose -u devuser app bash
+
+# Comando para ver los logs de un contenedor
+docker compose logs -f <nombre_service>
+
+# Comando para reiniciar un contenedor
+docker compose restart <nombre_service>

@@ -1,0 +1,35 @@
+{
+  "compact": true,
+  "controlFlowFlattening": false,
+  "deadCodeInjection": false,
+  "debugProtection": true,
+  "disableConsoleOutput": true,
+  "identifierNamesGenerator": "hexadecimal",
+  "renameGlobals": false,
+  "selfDefending": false,
+  "simplify": true,
+  "splitStrings": false,
+  "stringArray": true,
+  "stringArrayEncoding": [],
+  "stringArrayIndexShift": true,
+  "stringArrayRotate": true,
+  "stringArrayShuffle": true,
+  "stringArrayWrappersCount": 1,
+  "stringArrayWrappersChainedCalls": true,
+  "stringArrayWrappersParametersMaxCount": 2,
+  "stringArrayWrappersType": "variable",
+  "stringArrayThreshold": 0.75,
+  "target": "browser",
+  "sourceMap": false,
+  "exclude": [
+    "**/*.map",
+    "**/service-worker.js",
+    "**/precache-manifest.*.js",
+    "**/chunk-vendors*.js",
+    "**/vendors*.js"
+  ],
+  "reservedStrings": [
+    "\\{\\{\\s*vars\\s*\\[\\s*\\\"[\\w-]+\\\"\\s*\\]\\s*\\}\\}",
+    "\\{\\{\\s*vars\\s*\\[\\s*\\'[\\w-]+\\'\\s*\\]\\s*\\}\\}"
+  ]
+}

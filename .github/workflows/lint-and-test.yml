@@ -1,0 +1,20 @@
+name: Linters and Test
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - develop
+      - qa
+      - main
+jobs:
+  linter-and-test:
+    uses: modyo-connect/workflows/.github/workflows/widgets-lint-and-test.yml@v1
+    # with:
+    #   legacy-peer-deps: true
+    #   replace-lcov-paths: true
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

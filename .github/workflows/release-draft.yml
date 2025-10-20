@@ -1,0 +1,11 @@
+name: Release Drafter
+on:
+  push:
+    # branches to consider in the event; optional, defaults to all
+    branches:
+      - main
+      
+jobs:
+  call-release-drafter:
+    uses: modyo-connect/workflows/.github/workflows/release-drafter.yml@v1
+    secrets: inherit

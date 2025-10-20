@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test app component render external wrapper as should 1`] = `
+<div class="app container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-sm-12 gx-0">
+
+    </div>
+  </div>
+</div>
+`;

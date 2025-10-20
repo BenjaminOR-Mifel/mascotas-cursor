@@ -1,0 +1,38 @@
+name: Publish
+on:
+  push:
+    branches:
+      - task/*
+      - develop
+      - qa
+  release:
+    types: [published]
+jobs:
+  define-environment:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.extract_branch.outputs.environment }}
+    steps:
+      - name: Extract branch name
+        shell: bash
+        id: extract_branch
+        run: |
+          if [[ $GITHUB_REF == *"refs/tags"* ]]; then
+            echo "environment=production" >>$GITHUB_OUTPUT
+          elif [[ $GITHUB_REF == *"refs/heads/task"* ]]; then
+            echo "environment=mock" >>$GITHUB_OUTPUT
+          else
+            echo "environment=$(echo ${GITHUB_REF#refs/heads/})" >>$GITHUB_OUTPUT
+          fi
+  build-widget:
+    name: Build Widget
+    uses: modyo-connect/workflows/.github/workflows/widgets-build.yml@v1
+    # with:
+    #   legacy-peer-deps: true
+  push-to-modyo:
+    needs: [build-widget,define-environment]
+    uses: modyo-connect/workflows/.github/workflows/widgets-push.yml@v1
+    with:
+      environment: ${{ needs.define-environment.outputs.environment }}
+    secrets:
+      MODYO_TOKEN: ${{ secrets.MODYO_TOKEN }}

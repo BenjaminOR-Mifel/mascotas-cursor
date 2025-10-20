@@ -1,0 +1,35 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  prefix: "tw-",
+  corePlugins: {
+    preflight: false,
+  },
+  content: ["./src/**/*.{html,js,vue}"],
+  theme: {
+    colors: {
+      primary: "#00438F",
+      secondary: "#00CCC5",
+      warning: "#ff9800",
+      danger: "#f44336",
+      success: "#4caf50",
+      info: "#2196f3",
+      white: "#ffffff",
+      black: "#000000",
+      transparent: "transparent",
+      red: "#ff4949",
+      link: "#00438F",
+      blue: "#1fb6ff",
+      deepBlue: "#1e3a8a",
+      purple: "#7e5bef",
+      pink: "#ff49db",
+      orange: "#ff7849",
+      green: "#13ce66",
+      yellow: "#ffc82c",
+      "gray-dark": "#273444",
+      gray: "#8492a6",
+      "gray-light": "#d3dce6",
+    },
+    extend: {},
+  },
+  plugins: [],
+};
